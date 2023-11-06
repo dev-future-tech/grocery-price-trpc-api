@@ -1,0 +1,29 @@
+{
+  "name": "grocery-price-trpc-api",
+  "version": "1.0.0",
+  "description": "tRPC version of the Grocery Calculator",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test-dev": "start-server-and-test 'tsx server' 3000 'tsx client'"
+  },
+  "author": "Anthony Ikeda",
+  "license": "MIT",
+  "dependencies": {
+    "@trpc/server": "^10.43.1",
+    "@types/dotenv": "^8.2.0",
+    "@types/pg": "^8.10.7",
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.3",
+    "zod": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "eslint": "^8.53.0",
+    "npm-run-all": "^4.1.5",
+    "start-server-and-test": "^2.0.2",
+    "tsx": "^3.14.0",
+    "typescript": "^5.2.2",
+    "wait-port": "^1.1.0"
+  }
+}
