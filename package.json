@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
+    "dev:server": "tsx src",
     "test-dev": "start-server-and-test 'tsx server' 3000 'tsx client'"
   },
   "author": "Anthony Ikeda",

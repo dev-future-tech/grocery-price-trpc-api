@@ -1,20 +1,7 @@
-import { Client } from 'pg';
-import { config } from 'dotenv';
-config.apply({path: __dirname+'/.env' });
+import { Pool } from 'pg';
 
-
-export const getClient = async () => {
-    const client = new Client({
-        host: 'localhost',
-        port: 5432,
-        user: 'product_admin',
-        password: 'letmein',
-        database: 'product_db',
-        ssl: false
-    });
-    await client.connect();
-    const res = await client.query('SELECT $1::text as connected', ['Connection to postgres successful!']);
-    console.log(res.rows[0].connected);
-    return client;
-};
-
+export default new Pool ({
+    max: 20,
+    connectionString: 'postgres://product_admin:letmein@localhost:5432/product_db',
+    idleTimeoutMillis: 30000
+});
